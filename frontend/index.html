@@ -1,0 +1,15 @@
+<html>
+    <body>
+    <h1>Hey there</h1>
+    <div>Click button to fetch value of Pi</div>
+    <button onclick="fetchPi()">Click Here</button>
+    <div id="pi"></div>
+    <script>
+        async function fetchPi() {
+        let response = await fetch('http://localhost:4000/pi');
+        let data = await response.text();
+        document.getElementById('pi').innerHTML = data;
+        }
+    </script>
+    </body>
+</html>
